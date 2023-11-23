@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate-cypress-web-api-testing",
+  "version": "1.0.0",
+  "description": "Projeto referencia utilizando o cypress contendo testes de UI e API",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gabrielschmitt1/boilerplate-cypress-web-api-testing.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Gabriel Schmitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielschmitt1/boilerplate-cypress-web-api-testing/issues"
+  },
+  "homepage": "https://github.com/gabrielschmitt1/boilerplate-cypress-web-api-testing#readme",
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  }
+}
