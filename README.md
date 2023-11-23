@@ -14,8 +14,8 @@ Para usar este boilerplate, siga estas etapas:
 
 Este boilerplate contém dois exemplos de testes:
 
-* `example.spec.js`: Um teste web que verifica o comportamento de uma página da web.
-* `example.api.spec.js`: Um teste API que verifica o comportamento de uma API.
+* `example.cy.js`: Um teste web que verifica o comportamento de uma página da web.
+* `example.api.cy.js`: Um teste API que verifica o comportamento de uma API.
 
 ## Personalização
 
