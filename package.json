@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/gabrielschmitt1/boilerplate-cypress-web-api-testing#readme",
   "devDependencies": {
-    "cypress": "^13.6.0"
+    "cypress": "^13.6.0",
+    "faker-br": "^0.4.1"
   }
 }

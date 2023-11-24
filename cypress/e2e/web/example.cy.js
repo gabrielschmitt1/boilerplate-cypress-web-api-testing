@@ -1,24 +1,32 @@
 /// <reference types="cypress" />
+const faker = require('faker-br');
 
-describe('Exemplo testes web', () => {
+describe('Cadastro de usuários', () => {
+
   beforeEach(() => {
-    cy.visit('https://example.cypress.io/todo')
+    cy.login('qa@teste.com', '123123')
+    cy.visit('https://front.serverest.dev/admin/home')
   })
 
-  it('Mostrar duas listas de TODO por padrão', () => {
-    cy.get('.todo-list li').should('have.length', 2)
-    cy.get('.todo-list li').first().should('have.text', 'Pay electric bill')
-    cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
-  })
+  it('Cadastro de usuário com sucesso', () => {
 
-  it('Adicionar novo item na lista', () => {
-    const newItem = 'Feed the cat'
-    cy.get('[data-test=new-todo]').type(`${newItem}{enter}`)
+    let name = faker.name.firstName();
+    let email = faker.internet.email();
+    // Dado que eu informo os dados de cadastro
+    cy.get('[data-testid="cadastrarUsuarios"]').click()
+    cy.get('#nome').type(name)
+    cy.get('#email').type(email)
+    cy.get('#password').type('123456')
+    // Quando eu salvo esses dados
+    cy.get('[data-testid="cadastrarUsuario"]').click()
+    cy.intercept('POST', 'https://serverest.dev/usuarios').as('createUser')
+    cy.wait('@createUser')
+    // Então eu verifico o cadastro com sucesso.
+    cy.contains('table.table-striped tbody tr td', name).should('be.visible');
+  });
 
-    cy.get('.todo-list li')
-      .should('have.length', 3)
-      .last()
-      .should('have.text', newItem)
-  })
+  after(() => {
+
+  });
 
 })
