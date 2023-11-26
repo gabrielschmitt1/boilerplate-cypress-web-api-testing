@@ -23,8 +23,4 @@ describe('Cadastro de usuários', () => {
     cy.contains('table.table-striped tbody tr td', name).should('be.visible');
   });
 
-  after(() => {
-
-  });
-
 })
