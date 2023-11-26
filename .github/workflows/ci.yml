@@ -18,6 +18,6 @@ jobs:
           start: npm run prereport
           command: npm run cypress:ci:stg
         env:
-          CYPRESS_API_URL_STG: $${ secrets.CYPRESS_API_URL_STG }
-          CYPRESS_EMAIL_STG: $${ secrets.CYPRESS_EMAIL_STG }
-          CYPRESS_PASSWORD_STG: $${ secrets.CYPRESS_PASSWORD_STG }
+          CYPRESS_API_URL_STG: ${ secrets.CYPRESS_API_URL_STG }
+          CYPRESS_EMAIL_STG: ${ secrets.CYPRESS_EMAIL_STG }
+          CYPRESS_PASSWORD_STG: ${ secrets.CYPRESS_PASSWORD_STG }
