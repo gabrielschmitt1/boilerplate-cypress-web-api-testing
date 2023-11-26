@@ -1,5 +1,9 @@
-Cypress.Commands.add('login', (email, password) => {
-    cy.request('POST', 'https://serverest.dev/login', {
+const email = Cypress.env('email')
+const password = Cypress.env('password')
+const api_url = Cypress.env('api_url')
+
+Cypress.Commands.add('login', () => {
+    cy.request('POST', `${api_url}/login`, {
         email: email,
         password: password
     }).then((response) => {
@@ -8,7 +12,7 @@ Cypress.Commands.add('login', (email, password) => {
 })
 
 Cypress.Commands.add('createApiUser', () => {
-    cy.request('POST', 'https://serverest.dev/usuarios', {
+    cy.request('POST', `${api_url}/usuarios`, {
         nome: "QA Test",
         email: "qatest@teste.com",
         password: "teste",

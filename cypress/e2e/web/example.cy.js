@@ -4,8 +4,8 @@ const faker = require('faker-br');
 describe('Cadastro de usuários', () => {
 
   beforeEach(() => {
-    cy.login('qa@teste.com', '123123')
-    cy.visit('https://front.serverest.dev/admin/home')
+    cy.login()
+    cy.visit('/admin/home')
   })
 
   it('Cadastro de usuário com sucesso', () => {
@@ -19,8 +19,6 @@ describe('Cadastro de usuários', () => {
     cy.get('#password').type('123456')
     // Quando eu salvo esses dados
     cy.get('[data-testid="cadastrarUsuario"]').click()
-    cy.intercept('POST', 'https://serverest.dev/usuarios').as('createUser')
-    cy.wait('@createUser')
     // Então eu verifico o cadastro com sucesso.
     cy.contains('table.table-striped tbody tr td', name).should('be.visible');
   });
