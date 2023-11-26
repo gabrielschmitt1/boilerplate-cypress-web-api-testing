@@ -12,13 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Run tests 🧪
+      - name: Run tests
         uses: cypress-io/github-action@v5
         with:
           start: npm run prereport
           command: npm run cypress:ci:stg
-          #end: npm run postreport
         env:
-          CYPRESS_API_URL_STG: ${{ secrets.CYPRESS_API_URL_STG }}
-          CYPRESS_EMAIL_STG: ${{ secrets.CYPRESS_EMAIL_STG }}
-          CYPRESS_PASSWORD_STG: ${{ secrets.CYPRESS_PASSWORD_STG }}
+          CYPRESS_API_URL_STG: $${ secrets.CYPRESS_API_URL_STG }
+          CYPRESS_EMAIL_STG: $${ secrets.CYPRESS_EMAIL_STG }
+          CYPRESS_PASSWORD_STG: $${ secrets.CYPRESS_PASSWORD_STG }
