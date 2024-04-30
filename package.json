@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/gabrielschmitt1/boilerplate-cypress-web-api-testing#readme",
   "devDependencies": {
-    "cypress": "^13.6.0",
+    "cypress": "^13.8.1",
     "cypress-multi-reporters": "^1.6.4",
     "cypress-plugin-xhr-toggle": "^1.0.0",
     "dotenv": "^16.3.1",

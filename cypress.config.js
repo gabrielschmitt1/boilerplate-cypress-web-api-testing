@@ -4,6 +4,7 @@ require('dotenv/config')
 
 module.exports = defineConfig({
   e2e: {
+    experimentalStudio: true,
     video: false,
     chromeWebSecurity: false,
     viewportWidth: 1200,
@@ -13,7 +14,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
 
       if (process.env.CYPRESS_ENVIROMENT === 'stg') {
-        config.baseUrl = 'https://front.serverest.dev'
+        config.baseUrl = 'https://www.saucedemo.com'
         config.env = {
           env: 'stg',
           email: process.env.CYPRESS_EMAIL_STG,
