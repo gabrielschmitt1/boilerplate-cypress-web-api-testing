@@ -24,7 +24,9 @@ describe('Cadastro de usuários', () => {
   // });
 
   it('Testing sauce demo', () => {
-    cy.visit()
+    cy.visit('/')
+    const test = Cypress.env("username")
+    console.log(test)
   });
 
 })
